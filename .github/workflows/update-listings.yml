@@ -1,0 +1,80 @@
+name: Update Property Listings
+
+on:
+  # Triggered instantly by Google Apps Script webhook
+  repository_dispatch:
+    types: [update-listings]
+
+  # Fallback: also runs every 6 hours automatically
+  schedule:
+    - cron: '0 */6 * * *'
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Fetch latest data from Google Sheet (published as CSV)
+      - name: Fetch properties from Google Sheet
+        env:
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+        run: |
+          echo "Fetching property data from Google Sheet..."
+          curl -L "$SHEET_CSV_URL" -o properties.csv
+          echo "CSV downloaded:"
+          cat properties.csv
+
+      # 4. Convert CSV to JSON
+      - name: Convert CSV to JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+          const csv = fs.readFileSync('properties.csv', 'utf8');
+          const lines = csv.trim().split('\n');
+          const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,''));
+          const rows = lines.slice(1).map(line => {
+            // Handle commas inside quoted fields
+            const vals = [];
+            let current = '';
+            let inQuotes = false;
+            for (const ch of line) {
+              if (ch === '\"') { inQuotes = !inQuotes; }
+              else if (ch === ',' && !inQuotes) { vals.push(current.trim()); current = ''; }
+              else { current += ch; }
+            }
+            vals.push(current.trim());
+            const obj = {};
+            headers.forEach((h, i) => { obj[h] = (vals[i] || '').replace(/^\"|\"$/g,'').trim(); });
+            return obj;
+          }).filter(r => r.title && r.title !== '');
+          fs.writeFileSync('properties.json', JSON.stringify(rows, null, 2));
+          console.log('Converted ' + rows.length + ' rows to JSON');
+          "
+
+      # 5. Generate index.html from template + data
+      - name: Generate index.html
+        run: node generate.js
+
+      # 6. Commit and push if anything changed
+      - name: Commit updated site
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html properties.json properties.csv
+          git diff --staged --quiet || git commit -m "🏡 Update listings $(date +'%Y-%m-%d %H:%M IST')"
+          git push
