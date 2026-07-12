@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Property in Coorg | Coffee Estates & Villas for Sale – Coorg Investments</title>
+<meta name="description" content="Buy property in Coorg. Explore coffee estates, villas, and land for sale in Madikeri, Kushalnagar & more. Trusted real estate in Coorg.">
+<meta property="og:title" content="Coorg Investments – Buy Property in Coorg">
+<meta property="og:description" content="Coffee estates, villas & land for sale in Coorg.">
+<meta property="og:url" content="https://www.coorginvestments.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:   #1C3A2B;
+    --forest-light: #264d39;
+    --ivory:    #F5F0E8;
+    --ivory-dark: #EDE7D9;
+    --gold:     #C9A84C;
+    --gold-light: #e2c47a;
+    --brown:    #6B4226;
+    --charcoal: #1a1a1a;
+    --white:    #ffffff;
+    --shadow:   rgba(28,58,43,0.18);
+    --wa-green: #25D366;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 70px;
+    background: rgba(28,58,43,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: background 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-wa {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--wa-green);
+    color: var(--white) !important;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-wa:hover { background: #1da851; transform: scale(1.03); color: var(--white) !important; }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--white); border-radius: 2px; transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none; position: fixed; top: 70px; left: 0; right: 0;
+    background: var(--forest); padding: 24px 5%;
+    border-bottom: 2px solid var(--gold);
+    flex-direction: column; gap: 20px; z-index: 99;
+  }
+  .mobile-menu a {
+    color: rgba(255,255,255,0.9); text-decoration: none;
+    font-size: 1rem; font-weight: 500; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu.open { display: flex; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(160deg, rgba(28,58,43,0.88) 0%, rgba(28,58,43,0.65) 50%, rgba(107,66,38,0.75) 100%),
+      url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=1800&q=80') center/cover no-repeat;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 0 5%;
+    max-width: 820px;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 50px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.78);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--forest);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.6);
+    color: var(--white);
+    padding: 13px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+  .hero-stats {
+    position: absolute; bottom: 48px; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 48px; z-index: 2;
+    flex-wrap: wrap; padding: 0 5%;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .hero-stat span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint span { width: 1px; height: 40px; background: rgba(255,255,255,0.4); }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 80px 5%; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--forest);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ── WHY COORG ── */
+  .why { background: var(--white); }
+
+  .why-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .why-image {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .why-image img {
+    width: 100%; display: block;
+    aspect-ratio: 4/3; object-fit: cover;
+    border-radius: 4px;
+  }
+  .why-image::after {
+    content: '';
+    position: absolute; bottom: -16px; right: -16px;
+    width: 70%; height: 70%;
+    border: 3px solid var(--gold);
+    border-radius: 4px;
+    z-index: -1;
+  }
+  .why-features { margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
+  .why-feature {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .why-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ivory); display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; font-size: 1.2rem;
+  }
+  .why-feature h4 {
+    font-weight: 600; font-size: 0.95rem; color: var(--forest); margin-bottom: 4px;
+  }
+  .why-feature p { font-size: 0.875rem; color: #666; line-height: 1.6; }
+
+  /* ── LISTINGS ── */
+  .listings { background: var(--ivory); }
+  .listings-inner { max-width: 1200px; margin: 0 auto; }
+  .listings-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 48px; flex-wrap: wrap; gap: 20px;
+  }
+
+  .filter-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .filter-tab {
+    padding: 8px 20px; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; border: 2px solid var(--ivory-dark);
+    background: var(--white); color: #666;
+    transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .filter-tab.active, .filter-tab:hover {
+    border-color: var(--forest); background: var(--forest); color: var(--white);
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+  }
+
+  .property-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; flex-direction: column;
+  }
+  .property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px var(--shadow);
+  }
+
+  .card-image {
+    position: relative; overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+  .card-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.5s;
+  }
+  .property-card:hover .card-image img { transform: scale(1.05); }
+
+  .card-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--forest);
+    color: var(--gold);
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 50px;
+  }
+  .card-badge.sold { background: var(--brown); color: var(--white); }
+
+  .card-video-btn {
+    position: absolute; bottom: 16px; right: 16px;
+    background: rgba(0,0,0,0.65);
+    color: var(--white); border: none; border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1rem;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .card-video-btn:hover { background: rgba(201,168,76,0.9); }
+
+  .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+
+  .card-location {
+    font-size: 0.75rem; font-weight: 600; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--forest); line-height: 1.3; margin-bottom: 12px;
+  }
+
+  .card-price {
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--brown); margin-bottom: 16px;
+  }
+  .card-price span { font-size: 0.8rem; font-weight: 400; color: #888; }
+
+  .card-specs {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    padding: 12px 0;
+    border-top: 1px solid var(--ivory-dark);
+    border-bottom: 1px solid var(--ivory-dark);
+    margin-bottom: 20px;
+  }
+  .spec-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: #555;
+  }
+  .spec-item .icon { font-size: 1rem; }
+
+  .card-desc {
+    font-size: 0.875rem; color: #666; line-height: 1.65;
+    margin-bottom: 20px; flex: 1;
+  }
+
+  .card-wa-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--wa-green);
+    color: var(--white);
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-weight: 700; font-size: 0.875rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .card-wa-btn:hover { background: #1da851; transform: scale(1.02); }
+  .card-wa-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+  /* ── VIDEO MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.85); align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--charcoal); border-radius: 8px;
+    width: 100%; max-width: 860px; overflow: hidden;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(255,255,255,0.15); border: none;
+    color: var(--white); width: 36px; height: 36px;
+    border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-video {
+    width: 100%; aspect-ratio: 16/9; border: none;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--forest);
+    color: var(--white);
+  }
+  .about-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about .section-label { color: var(--gold); }
+  .about .section-title { color: var(--white); }
+  .about-text { color: rgba(255,255,255,0.78); line-height: 1.8; margin-bottom: 24px; font-size: 0.95rem; }
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .about-list li {
+    display: flex; align-items: center; gap: 12px;
+    color: rgba(255,255,255,0.85); font-size: 0.9rem;
+  }
+  .about-list li::before {
+    content: '✦'; color: var(--gold); font-size: 0.7rem; flex-shrink: 0;
+  }
+  .about-img-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .about-img-grid img {
+    width: 100%; border-radius: 4px; object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+  .about-img-grid img:first-child {
+    grid-column: 1 / -1; aspect-ratio: 16/8;
+  }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--ivory-dark); }
+  .contact-inner {
+    max-width: 1000px; margin: 0 auto; text-align: center;
+  }
+  .contact-inner .section-title { margin-bottom: 12px; }
+  .contact-inner .section-sub { margin: 0 auto 48px; text-align: center; }
+
+  .contact-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px; margin-bottom: 48px;
+  }
+  .contact-card {
+    background: var(--white); border-radius: 6px;
+    padding: 32px 20px; text-align: center;
+    box-shadow: 0 2px 16px var(--shadow);
+    text-decoration: none; color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+  }
+  .contact-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px var(--shadow); }
+  .contact-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+  .contact-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: #999; margin-bottom: 8px; }
+  .contact-card p { font-size: 1rem; font-weight: 600; color: var(--forest); }
+
+  .contact-wa-big {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--wa-green); color: var(--white);
+    padding: 18px 48px; border-radius: 50px;
+    font-size: 1.1rem; font-weight: 700; text-decoration: none;
+    box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .contact-wa-big:hover { background: #1da851; transform: scale(1.03); }
+  .contact-wa-big svg { width: 28px; height: 28px; fill: currentColor; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal); color: rgba(255,255,255,0.6);
+    padding: 48px 5% 24px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; color: var(--white); font-weight: 700;
+    margin-bottom: 12px; display: block; text-decoration: none;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-desc { font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+  .footer-wa {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--wa-green); color: var(--white);
+    padding: 10px 20px; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .footer-wa:hover { background: #1da851; }
+  .footer-wa svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .footer-col h5 {
+    color: var(--white); font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55); text-decoration: none;
+    font-size: 0.875rem; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1200px; margin: 24px auto 0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 0.8rem;
+  }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ── FLOATING WA ── */
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px; z-index: 150;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--wa-green);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.5);
+    text-decoration: none;
+    animation: pulse-wa 2.5s infinite;
+    transition: transform 0.2s;
+  }
+  .float-wa:hover { transform: scale(1.1); }
+  .float-wa svg { width: 30px; height: 30px; fill: var(--white); }
+
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.5); }
+    50% { box-shadow: 0 4px 40px rgba(37,211,102,0.75); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .hero-stats { gap: 28px; bottom: 80px; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .properties-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .hero-stats { display: none; }
+    .contact-cards { grid-template-columns: 1fr 1fr; }
+    .float-wa { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; }
+    .float-wa { animation: none; }
+    .scroll-hint { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Coorg<span>Investments</span></a>
+  <ul class="nav-links">
+    <li><a href="#listings">Properties</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="https://wa.me/919632288853?text=Hello%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20properties%20in%20Coorg." class="nav-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#listings" onclick="closeMobile()">Properties</a>
+  <a href="#about" onclick="closeMobile()">About Us</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20properties%20in%20Coorg." target="_blank" rel="noopener" style="color:#25D366;font-weight:700;">📱 WhatsApp Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Coorg, Karnataka — God's Own Country</div>
+    <h1>Where Mist Meets <em>Opportunity</em> in the Hills of Coorg</h1>
+    <p class="hero-sub">Discover handpicked coffee estates, forest villas, and premium land in one of India's most sought-after hill destinations. Your dream property in Coorg, curated with care.</p>
+    <div class="hero-ctas">
+      <a href="#listings" class="btn-primary">View Properties</a>
+      <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20looking%20to%20buy%20property%20in%20Coorg.%20Can%20you%20help%3F" class="btn-outline" target="_blank" rel="noopener">Talk to Us</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>10+</strong><span>Years in Coorg</span></div>
+    <div class="hero-stat"><strong>50+</strong><span>Properties Sold</span></div>
+    <div class="hero-stat"><strong>100%</strong><span>Trusted Deals</span></div>
+  </div>
+  <div class="scroll-hint"><span></span></div>
+</section>
+
+<!-- WHY COORG -->
+<section class="why">
+  <div class="why-inner">
+    <div class="why-image fade-up">
+      <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=700&q=80" alt="Coffee estate in Coorg" loading="lazy">
+    </div>
+    <div class="fade-up">
+      <span class="section-label">Why Invest in Coorg</span>
+      <h2 class="section-title">More Than a Property. A Piece of the Western Ghats.</h2>
+      <p class="section-sub">Coorg is Karnataka's most coveted hill destination — rising land values, a thriving tourism economy, and unmatched natural beauty make it India's best-kept investment secret.</p>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-icon">🌿</div>
+          <div>
+            <h4>Coffee Estate Living</h4>
+            <p>Own working estates with Arabica/Robusta cultivation. Income-generating from day one with scenic vistas year-round.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">📈</div>
+          <div>
+            <h4>High Capital Appreciation</h4>
+            <p>Land in Coorg has seen 15–20% annual appreciation in premium micro-markets like Madikeri and Kushalnagar.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">🏡</div>
+          <div>
+            <h4>Tourism & Rental Income</h4>
+            <p>Villas and homestays in Coorg command premium rental yields as the region draws over 3 million tourists yearly.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">🤝</div>
+          <div>
+            <h4>Trusted Local Expertise</h4>
+            <p>We know every micro-market in Coorg — from Virajpet to Gonikoppal. Get insider access, not just listings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section class="listings" id="listings">
+  <div class="listings-inner">
+    <div class="listings-header">
+      <div>
+        <span class="section-label">Available Now</span>
+        <h2 class="section-title">Current Listings</h2>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterProps('all', this)">All</button>
+        <button class="filter-tab" onclick="filterProps('estate', this)">Estates</button>
+        <button class="filter-tab" onclick="filterProps('villa', this)">Villas</button>
+        <button class="filter-tab" onclick="filterProps('land', this)">Land</button>
+      </div>
+    </div>
+
+    <div class="properties-grid" id="propsGrid">
+
+      <!-- PROPERTY CARD 1 -->
+      <div class="property-card fade-up" data-type="estate">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80" alt="Coffee Estate Madikeri" loading="lazy">
+          <span class="card-badge">Coffee Estate</span>
+          <a href="#" class="card-video-btn" onclick="openVideo(event,'YOUTUBE_ID_1')" title="Watch walkthrough">▶</a>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Madikeri, Coorg</div>
+          <h3 class="card-title">5-Acre Arabica Coffee Estate with Farmhouse</h3>
+          <div class="card-price">₹1.8 Cr <span>negotiable</span></div>
+          <div class="card-specs">
+            <div class="spec-item"><span class="icon">🌳</span> 5 Acres</div>
+            <div class="spec-item"><span class="icon">🏠</span> 3 BHK Farmhouse</div>
+            <div class="spec-item"><span class="icon">☕</span> Working Estate</div>
+          </div>
+          <p class="card-desc">A fully operational Arabica estate with a charming 3BHK farmhouse, year-round stream, and stunning valley views. Income-generating with immediate possession.</p>
+          <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20the%205-Acre%20Arabica%20Coffee%20Estate%20in%20Madikeri.%20Please%20share%20more%20details." class="card-wa-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Enquire on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- PROPERTY CARD 2 -->
+      <div class="property-card fade-up" data-type="villa">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" alt="Luxury Villa Kushalnagar" loading="lazy">
+          <span class="card-badge">Villa</span>
+          <a href="#" class="card-video-btn" onclick="openVideo(event,'YOUTUBE_ID_2')" title="Watch walkthrough">▶</a>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Kushalnagar, Coorg</div>
+          <h3 class="card-title">Luxury 4BHK Villa with Infinity Pool</h3>
+          <div class="card-price">₹2.4 Cr <span>ready to move</span></div>
+          <div class="card-specs">
+            <div class="spec-item"><span class="icon">🛏️</span> 4 BHK</div>
+            <div class="spec-item"><span class="icon">🏊</span> Infinity Pool</div>
+            <div class="spec-item"><span class="icon">📐</span> 3,200 sq ft</div>
+          </div>
+          <p class="card-desc">Architecturally designed villa overlooking the Cauvery valley with a private infinity pool, smart home automation, and a landscaped 1-acre garden. Ideal for homestay or personal retreat.</p>
+          <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20the%20Luxury%204BHK%20Villa%20in%20Kushalnagar.%20Please%20share%20more%20details." class="card-wa-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Enquire on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- PROPERTY CARD 3 -->
+      <div class="property-card fade-up" data-type="land">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=700&q=80" alt="Land Virajpet" loading="lazy">
+          <span class="card-badge">Land</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Virajpet, Coorg</div>
+          <h3 class="card-title">12 Acres of Prime Agricultural Land</h3>
+          <div class="card-price">₹85 L <span>per acre</span></div>
+          <div class="card-specs">
+            <div class="spec-item"><span class="icon">🌳</span> 12 Acres</div>
+            <div class="spec-item"><span class="icon">🗺️</span> NH Proximity</div>
+            <div class="spec-item"><span class="icon">💧</span> River Frontage</div>
+          </div>
+          <p class="card-desc">Contiguous 12-acre plot with river frontage, road access, and clear titles. Suitable for resort development, organic farming, or long-term land banking. Power and water connections available.</p>
+          <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20the%2012%20Acres%20Agricultural%20Land%20in%20Virajpet.%20Please%20share%20more%20details." class="card-wa-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Enquire on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /properties-grid -->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="fade-up">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">Your Trusted Partner in Coorg Real Estate</h2>
+      <p class="about-text">We are a boutique real estate firm rooted in Coorg — not a national portal, not an algorithm. Every property we list, we have personally visited, evaluated, and believe in. When you enquire with us, you speak directly to someone who knows every lane in Madikeri.</p>
+      <p class="about-text">Whether you're an NRI looking for a homeland retreat, a family seeking a weekend escape, or an investor eyeing appreciating land — we match you to the right property, not just any property.</p>
+      <ul class="about-list">
+        <li>Clear title verification before every listing</li>
+        <li>Honest pricing — no inflated rates, no hidden commissions</li>
+        <li>End-to-end support from site visit to registration</li>
+        <li>Deep local network across Madikeri, Kushalnagar, Virajpet & Gonikoppal</li>
+      </ul>
+      <a href="https://wa.me/919632288853?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Coorg%20Investments." class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Get in Touch
+      </a>
+    </div>
+    <div class="about-img-grid fade-up">
+      <img src="https://images.unsplash.com/photo-1598887142487-3c854d51eabb?w=700&q=80" alt="Coorg landscape" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=400&q=80" alt="Coffee estate" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Coorg hills" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-label fade-up">Get In Touch</span>
+    <h2 class="section-title fade-up">Ready to Find Your Property in Coorg?</h2>
+    <p class="section-sub fade-up">We respond fast. Most enquiries get a reply within the hour — just send us a WhatsApp and we'll take it from there.</p>
+    <div class="contact-cards fade-up">
+      <a class="contact-card" href="https://wa.me/919632288853" target="_blank" rel="noopener">
+        <span class="icon">💬</span>
+        <h4>WhatsApp</h4>
+        <p>+91 96322 88853</p>
+      </a>
+      <a class="contact-card" href="tel:+919632288853">
+        <span class="icon">📞</span>
+        <h4>Phone</h4>
+        <p>+91 96322 88853</p>
+      </a>
+      <a class="contact-card" href="mailto:info@coorginvestments.com">
+        <span class="icon">✉️</span>
+        <h4>Email</h4>
+        <p>info@coorginvestments.com</p>
+      </a>
+    </div>
+    <a href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20buying%20property%20in%20Coorg.%20Can%20you%20help%20me%3F" class="contact-wa-big fade-up" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat with Us on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="footer-logo">Coorg<span>Investments</span></a>
+      <p class="footer-desc">Your trusted partner for buying premium properties in Coorg — coffee estates, villas, and prime land. Serving buyers across India and the world since 2014.</p>
+      <a href="https://wa.me/919632288853" class="footer-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +91 96322 88853
+      </a>
+    </div>
+    <div class="footer-col">
+      <h5>Properties</h5>
+      <ul>
+        <li><a href="#listings">Coffee Estates</a></li>
+        <li><a href="#listings">Villas & Homes</a></li>
+        <li><a href="#listings">Agricultural Land</a></li>
+        <li><a href="#listings">Commercial</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://wa.me/919632288853">WhatsApp</a></li>
+        <li><a href="mailto:info@coorginvestments.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Coorg Investments. All rights reserved.</span>
+    <span>Made with ❤️ for the hills of Coorg</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/919632288853?text=Hello%2C%20I%27m%20interested%20in%20properties%20in%20Coorg." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="videoModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeVideo()">✕</button>
+    <iframe class="modal-video" id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  // Hamburger
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  function closeMobile() { mob.classList.remove('open'); }
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Property filter
+  function filterProps(type, btn) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.property-card').forEach(card => {
+      card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+    });
+  }
+
+  // Video modal
+  function openVideo(e, youtubeId) {
+    e.preventDefault();
+    if (!youtubeId || youtubeId.startsWith('YOUTUBE_ID')) {
+      alert('Video walkthrough coming soon! Contact us on WhatsApp for a live tour.');
+      return;
+    }
+    document.getElementById('modalIframe').src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+    document.getElementById('videoModal').classList.add('open');
+  }
+  function closeVideo() {
+    document.getElementById('videoModal').classList.remove('open');
+    document.getElementById('modalIframe').src = '';
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('videoModal')) closeVideo();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo(); });
+</script>
+</body>
+</html>
