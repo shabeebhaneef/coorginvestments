@@ -71,9 +71,9 @@ function specItem(icon, text) {
 }
 
 // ── Build property card HTML ─────────────────────────────────────────────────
-function buildCard(p, index) {
-  const imgs   = driveUrls(p.photos);
-  const imgSrc = imgs.length > 0 ? imgs[0] : 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=700&q=80';
+function buildCard(p) {
+  let imgs = driveUrls(p.photos);
+  if (imgs.length === 0) imgs = ['https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=700&q=80'];
   const ytId   = youtubeId(p.youtube_url);
   const type   = (p.type || 'estate').toLowerCase();
 
@@ -91,7 +91,12 @@ function buildCard(p, index) {
       <!-- ${p.title} -->
       <div class="property-card fade-up" data-type="${type}">
         <div class="card-image">
-          <img src="${imgSrc}" alt="${p.title}" loading="lazy">
+          ${imgs.map((src, idx) =>
+            `<img src="${src}" alt="${esc(p.title)}" loading="lazy" class="card-img${idx === 0 ? ' active' : ''}">`
+          ).join('\n          ')}
+          ${imgs.length > 1 ? `<button class="img-nav prev" onclick="cycleImg(event,this,-1)" aria-label="Previous photo">‹</button>
+          <button class="img-nav next" onclick="cycleImg(event,this,1)" aria-label="Next photo">›</button>
+          <span class="img-count">1/${imgs.length}</span>` : ''}
           <span class="card-badge">${p.type || 'Estate'}</span>
           ${videoBtn}
         </div>

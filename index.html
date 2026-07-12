@@ -552,6 +552,27 @@
   }
   .property-card:hover .card-image img { transform: scale(1.05); }
 
+  /* Photo gallery (multiple images per card) */
+  .card-image .card-img { display: none; }
+  .card-image .card-img.active { display: block; }
+  .img-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.45); color: var(--white);
+    border: none; width: 34px; height: 34px; border-radius: 50%;
+    cursor: pointer; font-size: 20px; line-height: 1; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .img-nav:hover { background: rgba(0,0,0,0.7); }
+  .img-nav.prev { left: 12px; }
+  .img-nav.next { right: 12px; }
+  .img-count {
+    position: absolute; bottom: 12px; left: 16px;
+    background: rgba(0,0,0,0.55); color: var(--white);
+    padding: 2px 10px; border-radius: 12px; font-size: 0.72rem;
+    z-index: 2;
+  }
+
   .card-badge {
     position: absolute; top: 16px; left: 16px;
     background: var(--forest);
@@ -929,7 +950,13 @@
       <!-- 3 BHK House in Madikeri -->
       <div class="property-card fade-up" data-type="villa">
         <div class="card-image">
-          <img src="https://drive.google.com/thumbnail?id=1a8sxGVYU6p8G0XCo_bEOpwo8c46Z5A2k&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy">
+          <img src="https://drive.google.com/thumbnail?id=1a8sxGVYU6p8G0XCo_bEOpwo8c46Z5A2k&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img active">
+          <img src="https://drive.google.com/thumbnail?id=1v5QH6mxo_sfDl58KEdXc2_4d9BgBET_h&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
+          <img src="https://drive.google.com/thumbnail?id=1DgDWClSjlbjF-_mWkPXzXnnNrbKvegiU&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
+          <img src="https://drive.google.com/thumbnail?id=1EIbuqdMxPMUWlvs6U6x2f540-5fWMYbk&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
+          <button class="img-nav prev" onclick="cycleImg(event,this,-1)" aria-label="Previous photo">‹</button>
+          <button class="img-nav next" onclick="cycleImg(event,this,1)" aria-label="Next photo">›</button>
+          <span class="img-count">1/4</span>
           <span class="card-badge">Villa</span>
           
         </div>
@@ -1078,6 +1105,19 @@
     document.querySelectorAll('.property-card').forEach(card => {
       card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
     });
+  }
+
+  // Card photo gallery
+  function cycleImg(e, btn, dir) {
+    e.preventDefault(); e.stopPropagation();
+    const wrap = btn.closest('.card-image');
+    const imgs = Array.from(wrap.querySelectorAll('.card-img'));
+    const i = imgs.findIndex(im => im.classList.contains('active'));
+    imgs[i].classList.remove('active');
+    const n = (i + dir + imgs.length) % imgs.length;
+    imgs[n].classList.add('active');
+    const c = wrap.querySelector('.img-count');
+    if (c) c.textContent = (n + 1) + '/' + imgs.length;
   }
 
   // Video modal
