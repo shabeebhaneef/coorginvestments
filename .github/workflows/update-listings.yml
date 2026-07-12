@@ -42,32 +42,9 @@ jobs:
           echo "CSV downloaded:"
           cat properties.csv
 
-      # 4. Convert CSV to JSON
+      # 4. Convert CSV to JSON (proper CSV parser + field mapping)
       - name: Convert CSV to JSON
-        run: |
-          node -e "
-          const fs = require('fs');
-          const csv = fs.readFileSync('properties.csv', 'utf8');
-          const lines = csv.trim().split('\n');
-          const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,''));
-          const rows = lines.slice(1).map(line => {
-            // Handle commas inside quoted fields
-            const vals = [];
-            let current = '';
-            let inQuotes = false;
-            for (const ch of line) {
-              if (ch === '\"') { inQuotes = !inQuotes; }
-              else if (ch === ',' && !inQuotes) { vals.push(current.trim()); current = ''; }
-              else { current += ch; }
-            }
-            vals.push(current.trim());
-            const obj = {};
-            headers.forEach((h, i) => { obj[h] = (vals[i] || '').replace(/^\"|\"$/g,'').trim(); });
-            return obj;
-          }).filter(r => r.title && r.title !== '');
-          fs.writeFileSync('properties.json', JSON.stringify(rows, null, 2));
-          console.log('Converted ' + rows.length + ' rows to JSON');
-          "
+        run: node convert-csv.js
 
       # 5. Generate index.html from template + data
       - name: Generate index.html

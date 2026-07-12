@@ -39,18 +39,30 @@ function youtubeId(url) {
   return m ? m[1] : null;
 }
 
-// Extract first valid Google Drive image URL from comma-separated list
+// Extract first valid Google Drive image URL from comma-separated list.
+// Handles both share formats:
+//   https://drive.google.com/file/d/FILE_ID/view
+//   https://drive.google.com/open?id=FILE_ID   (Google Forms responses)
 function driveUrls(raw) {
   if (!raw) return [];
   return raw.split(',')
     .map(u => u.trim())
     .filter(Boolean)
     .map(u => {
-      // Convert Google Drive share URL to direct embed URL
-      const m = u.match(/\/d\/([a-zA-Z0-9_-]+)/);
-      return m ? `https://drive.google.com/uc?export=view&id=${m[1]}` : u;
+      const m = u.match(/\/d\/([a-zA-Z0-9_-]+)/) || u.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      // thumbnail endpoint embeds far more reliably than uc?export=view
+      return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000` : u;
     })
     .slice(0, 5);
+}
+
+// Escape HTML and preserve line breaks in user-entered text
+function esc(text) {
+  return (text || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function descHtml(text) {
+  return esc(text).replace(/\r?\n/g, '<br>');
 }
 
 function specItem(icon, text) {
@@ -90,7 +102,7 @@ function buildCard(p, index) {
           <div class="card-specs">
             ${specs}
           </div>
-          <p class="card-desc">${p.description}</p>
+          <p class="card-desc">${descHtml(p.description)}</p>
           <a href="${waLink(p.title)}" class="card-wa-btn" target="_blank" rel="noopener">
             ${WA_SVG}
             Enquire on WhatsApp
