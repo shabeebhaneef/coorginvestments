@@ -92,7 +92,7 @@ function buildCard(p) {
       <div class="property-card fade-up" data-type="${type}">
         <div class="card-image">
           ${imgs.map((src, idx) =>
-            `<img src="${src}" alt="${esc(p.title)}" loading="lazy" class="card-img${idx === 0 ? ' active' : ''}">`
+            `<img src="${src}" alt="${esc(p.title)}" loading="lazy" class="card-img${idx === 0 ? ' active' : ''}" onclick="openLightbox(this)">`
           ).join('\n          ')}
           ${imgs.length > 1 ? `<button class="img-nav prev" onclick="cycleImg(event,this,-1)" aria-label="Previous photo">‹</button>
           <button class="img-nav next" onclick="cycleImg(event,this,1)" aria-label="Next photo">›</button>
