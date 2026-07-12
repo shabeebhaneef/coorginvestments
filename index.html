@@ -993,10 +993,10 @@
       <!-- 3 BHK House in Madikeri -->
       <div class="property-card fade-up" data-type="villa">
         <div class="card-image">
-          <img src="https://drive.google.com/thumbnail?id=1a8sxGVYU6p8G0XCo_bEOpwo8c46Z5A2k&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img active" onclick="openLightbox(this)">
-          <img src="https://drive.google.com/thumbnail?id=1v5QH6mxo_sfDl58KEdXc2_4d9BgBET_h&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img" onclick="openLightbox(this)">
-          <img src="https://drive.google.com/thumbnail?id=1DgDWClSjlbjF-_mWkPXzXnnNrbKvegiU&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img" onclick="openLightbox(this)">
-          <img src="https://drive.google.com/thumbnail?id=1EIbuqdMxPMUWlvs6U6x2f540-5fWMYbk&sz=w1000" alt="3 BHK House in Madikeri" loading="lazy" class="card-img" onclick="openLightbox(this)">
+          <img src="https://drive.google.com/uc?export=view&id=1a8sxGVYU6p8G0XCo_bEOpwo8c46Z5A2k" alt="3 BHK House in Madikeri" loading="lazy" class="card-img active">
+          <img src="https://drive.google.com/uc?export=view&id=1v5QH6mxo_sfDl58KEdXc2_4d9BgBET_h" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
+          <img src="https://drive.google.com/uc?export=view&id=1DgDWClSjlbjF-_mWkPXzXnnNrbKvegiU" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
+          <img src="https://drive.google.com/uc?export=view&id=1EIbuqdMxPMUWlvs6U6x2f540-5fWMYbk" alt="3 BHK House in Madikeri" loading="lazy" class="card-img">
           <button class="img-nav prev" onclick="cycleImg(event,this,-1)" aria-label="Previous photo">‹</button>
           <button class="img-nav next" onclick="cycleImg(event,this,1)" aria-label="Next photo">›</button>
           <span class="img-count">1/4</span>
@@ -1172,19 +1172,21 @@
     if (c) c.textContent = (n + 1) + '/' + imgs.length;
   }
 
-  // Photo lightbox
+  // Photo lightbox — delegate to .card-image div so broken imgs (Edge) still work
   let _lbSrcs = [], _lbIdx = 0;
 
-  function openLightbox(img) {
-    const wrap = img.closest('.card-image');
-    const all  = Array.from(wrap.querySelectorAll('.card-img'));
-    _lbSrcs = all.map(i => i.src);
-    _lbIdx  = all.indexOf(img);
-    if (_lbIdx < 0) _lbIdx = all.findIndex(i => i.classList.contains('active'));
+  document.addEventListener('click', function(e) {
+    const cardImage = e.target.closest('.card-image');
+    if (!cardImage) return;
+    if (e.target.closest('.img-nav') || e.target.closest('.card-video-btn')) return;
+    const imgs = Array.from(cardImage.querySelectorAll('.card-img'));
+    if (imgs.length === 0) return;
+    _lbIdx = Math.max(0, imgs.findIndex(i => i.classList.contains('active')));
+    _lbSrcs = imgs.map(i => i.src);
     _lbRender();
     document.getElementById('lbOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-  }
+  });
 
   function _lbRender() {
     document.getElementById('lbImg').src = _lbSrcs[_lbIdx];

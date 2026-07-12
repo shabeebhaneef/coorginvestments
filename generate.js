@@ -51,7 +51,7 @@ function driveUrls(raw) {
     .map(u => {
       const m = u.match(/\/d\/([a-zA-Z0-9_-]+)/) || u.match(/[?&]id=([a-zA-Z0-9_-]+)/);
       // thumbnail endpoint embeds far more reliably than uc?export=view
-      return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000` : u;
+      return m ? `https://drive.google.com/uc?export=view&id=${m[1]}` : u;
     })
     .slice(0, 5);
 }
@@ -92,7 +92,7 @@ function buildCard(p) {
       <div class="property-card fade-up" data-type="${type}">
         <div class="card-image">
           ${imgs.map((src, idx) =>
-            `<img src="${src}" alt="${esc(p.title)}" loading="lazy" class="card-img${idx === 0 ? ' active' : ''}" onclick="openLightbox(this)">`
+            `<img src="${src}" alt="${esc(p.title)}" loading="lazy" class="card-img${idx === 0 ? ' active' : ''}">`
           ).join('\n          ')}
           ${imgs.length > 1 ? `<button class="img-nav prev" onclick="cycleImg(event,this,-1)" aria-label="Previous photo">‹</button>
           <button class="img-nav next" onclick="cycleImg(event,this,1)" aria-label="Next photo">›</button>
