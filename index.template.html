@@ -1144,21 +1144,19 @@
     if (c) c.textContent = (n + 1) + '/' + imgs.length;
   }
 
-  // Photo lightbox — delegate to .card-image div so broken imgs (Edge) still work
+  // Photo lightbox
   let _lbSrcs = [], _lbIdx = 0;
 
-  document.addEventListener('click', function(e) {
-    const cardImage = e.target.closest('.card-image');
-    if (!cardImage) return;
-    if (e.target.closest('.img-nav') || e.target.closest('.card-video-btn')) return;
-    const imgs = Array.from(cardImage.querySelectorAll('.card-img'));
-    if (imgs.length === 0) return;
-    _lbIdx = Math.max(0, imgs.findIndex(i => i.classList.contains('active')));
-    _lbSrcs = imgs.map(i => i.src);
+  function openLightbox(img) {
+    const wrap = img.closest('.card-image');
+    const all  = Array.from(wrap.querySelectorAll('.card-img'));
+    _lbSrcs = all.map(i => i.src);
+    _lbIdx  = all.indexOf(img);
+    if (_lbIdx < 0) _lbIdx = all.findIndex(i => i.classList.contains('active'));
     _lbRender();
     document.getElementById('lbOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
+  }
 
   function _lbRender() {
     document.getElementById('lbImg').src = _lbSrcs[_lbIdx];
